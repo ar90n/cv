@@ -1,0 +1,348 @@
+{
+  "basics": {
+    "name": "Masahiro Wada",
+    "name_en": "Masahiro Wada",
+    "title": "Senior Software Engineer",
+    "location": "Japan",
+    "email": "argon.argon.argon@gmail.com",
+    "profiles": {
+      "github": "https://github.com/ar90n",
+      "website": "https://lab.ar90n.net",
+      "linkedin": "https://www.linkedin.com/in/ar90n/"
+    },
+    "objective": "Tackle hard problems in deep-tech domains; prefer applying Python/Rust where they deliver impact.",
+    "summary_pr": "End-to-end across embedded, medical systems, and web backends."
+  },
+  "certifications": [
+    {
+      "name": "First-Class Radio Operator for Land Mobile Service",
+      "issuer": "",
+      "date": "2024-01"
+    },
+    {
+      "name": "Kaggle Competition Expert",
+      "issuer": "Kaggle",
+      "date": "2021-01"
+    },
+    {
+      "name": "Embedded Systems Specialist (Japan IPA)",
+      "issuer": "IPA",
+      "date": "2010-11"
+    }
+  ],
+  "summary": "Senior software engineer across medical/manufacturing image processing, robotics (ROS/Zephyr), and web/cloud backends. Delivers from algorithm and SDKs to cloud operations with Python, Rust, Go, C/C++, C#, and TypeScript. Hands-on with DICOM/PACS, SIMD/parallel optimization, and data pipelines/visualization.",
+  "skills": {
+    "languages": [
+      "Python",
+      "Rust",
+      "Go",
+      "C",
+      "C++",
+      "C#",
+      "TypeScript"
+    ],
+    "robotics_embedded": [
+      "ROS",
+      "Zephyr RTOS",
+      "UART",
+      "CAN"
+    ],
+    "medical_manufacturing": [
+      "DICOM",
+      "PACS",
+      "CT/MR/Endoscope",
+      "2D/3D Segmentation",
+      "Drawing Analysis"
+    ],
+    "algorithms": [
+      "Image/Signal Processing",
+      "Optimization (SIMD/Parallel)",
+      "OpenVINO"
+    ],
+    "backend_infra": [
+      "Node.js",
+      "gRPC",
+      "AWS",
+      "Google Cloud",
+      "Docker",
+      "Linux",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "client_visualization": [
+      "React",
+      "Unity (C#)"
+    ]
+  },
+  "experience": [
+    {
+      "company": "LexxPluss, Inc.",
+      "title": "Senior Software Engineer",
+      "employment_type": "Full-time",
+      "domain": "Mobile robots (AMR/AGV)",
+      "location": "",
+      "start_date": "2024-01",
+      "end_date": null,
+      "summary": "Firmware/ROS applications for autonomous mobile robots; customization and bring-up for specific customers.",
+      "responsibilities": [
+        "Maintain/port firmware exposing peripherals to ROS via Zephyr + UART/CAN (IMU, encoders, I/O).",
+        "Customize and port the system for customer robots (e.g., wheel-driver control method changes).",
+        "Develop ROS application nodes other than motion control/pose estimation (monitoring, diagnostics, I/O, device mgmt).",
+        "Contribute to ROS-based mobile robot system development."
+      ],
+      "tech": [
+        "ROS",
+        "Zephyr RTOS",
+        "UART",
+        "CAN",
+        "C",
+        "C++",
+        "Python",
+        "Rust",
+        "Docker",
+        "Linux"
+      ],
+      "notes": []
+    },
+    {
+      "company": "Hacobu Inc.",
+      "title": "Software Engineer",
+      "employment_type": "Full-time",
+      "domain": "Logistics (dock/berth mgmt, fleet mgmt, data analysis)",
+      "location": "",
+      "start_date": "2023-03",
+      "end_date": "2023-12",
+      "summary": "Backend for dock management app, evaluation of new GPS devices, and initial AI PoCs.",
+      "responsibilities": [
+        "Implement backend for the dock management application (Go).",
+        "Evaluate new GPS device for fleet management (behavior logs, compatibility, integration requirements).",
+        "Design/implement endpoints to ingest device data into the existing data pipeline (Go).",
+        "Early AI PoCs: estimate cargo volume via depth estimation; estimate payload weight via accelerometer."
+      ],
+      "tech": [
+        "Go",
+        "Python",
+        "Log analysis"
+      ],
+      "notes": []
+    },
+    {
+      "company": "Freelance",
+      "title": "Software Engineer",
+      "employment_type": "Contract",
+      "domain": "Sensing/IoT/VR & Metaverse",
+      "location": "",
+      "start_date": "2022-01",
+      "end_date": "2023-02",
+      "summary": "Depth-camera measurement, marine IoT/pipelines, and user-experience improvements for VR.",
+      "responsibilities": [
+        "Implement multi-depth-camera extrinsic calibration.",
+        "Estimate package volume from depth data.",
+        "Maintain IoT system for ship management (Python).",
+        "Maintain GPS/ship-info data pipelines (Go).",
+        "Implement AIS data ingestion pipeline (Go).",
+        "Implement character model optimization pipeline (Go, AWS Lambda/S3/SQS) to reduce load time.",
+        "Improve YouTube live integration (Go) and attach metadata to specific in-app user actions (Unity, C#)."
+      ],
+      "tech": [
+        "Python",
+        "Go",
+        "Unity (C#)",
+        "AWS (Lambda, S3, SQS)",
+        "Depth Cameras",
+        "Calibration"
+      ],
+      "notes": []
+    },
+    {
+      "company": "CADDi Inc.",
+      "title": "Software Engineer",
+      "employment_type": "Full-time",
+      "domain": "Manufacturing (drawing mgmt/analysis)",
+      "location": "",
+      "start_date": "2020-06",
+      "end_date": "2022-01",
+      "summary": "Web-based drawing management system and analysis algorithms; evaluation/ops pipelines.",
+      "responsibilities": [
+        "Implement distribution-image generation pipeline for drawings (TypeScript).",
+        "Implement backend APIs (TypeScript).",
+        "Research title-block detection and metadata extraction (Python, Rust).",
+        "Prototype integration with the drawing management system (Python).",
+        "Implement batch system for algorithm evaluation (Python, Google Cloud Composer/Airflow)."
+      ],
+      "tech": [
+        "TypeScript",
+        "Rust",
+        "Python",
+        "Google Cloud (Composer/Airflow, Storage, Functions)"
+      ],
+      "notes": []
+    },
+    {
+      "company": "LPixel Inc.",
+      "title": "Software Engineer",
+      "employment_type": "Full-time",
+      "domain": "Medical imaging (endoscope/microscope/platform)",
+      "location": "Tokyo",
+      "start_date": "2017-10",
+      "end_date": "2020-05",
+      "summary": "Imaging analysis platform/library, real-time endoscope SDK, and web app for microscopy.",
+      "responsibilities": [
+        "Design/implement data workflow with Python + SQL.",
+        "Improve imaging algorithms and integrate into the platform.",
+        "Support deployments (on-site/vendor collaboration).",
+        "Optimize real-time inference for endoscope SDK.",
+        "Provide SDKs for C/C#/Python on Windows/Linux.",
+        "Integrate with endoscope capture systems.",
+        "Build UI (React) and backend/pipelines for microscopy web app."
+      ],
+      "tech": [
+        "Python",
+        "C++",
+        "C#",
+        "TypeScript",
+        "OpenVINO",
+        "React",
+        "AWS",
+        "DICOM",
+        "SQL",
+        "Docker",
+        "Keras",
+        "TensorFlow",
+        "Flask",
+        "SQLite",
+        "NumPy"
+      ],
+      "notes": []
+    },
+    {
+      "company": "TeraRecon, Inc.",
+      "title": "Software Engineer",
+      "employment_type": "Full-time",
+      "domain": "Medical imaging (CT/MR, 3D workstation)",
+      "location": "Tokyo",
+      "start_date": "2014-10",
+      "end_date": "2017-10",
+      "summary": "Segmentation algorithms and 3D workstation features.",
+      "responsibilities": [
+        "Implement segmentation for organs/vessels (C++).",
+        "Develop 3D workstation application (C#, Windows Forms)."
+      ],
+      "tech": [
+        "C++",
+        "C#",
+        "Medical imaging"
+      ],
+      "notes": []
+    },
+    {
+      "company": "COLOPL, Inc.",
+      "title": "Software Engineer",
+      "employment_type": "Full-time",
+      "domain": "Mobile games / real-time communication",
+      "location": "",
+      "start_date": "2013-02",
+      "end_date": "2014-10",
+      "summary": "Realtime co-op gameplay; client and relay server.",
+      "responsibilities": [
+        "Implement multiplayer object sync and gameplay logic (Unity, C#).",
+        "Design/implement WebSocket relay server (Node.js).",
+        "Operate and enhance a quiz game for KR market.",
+        "Develop/maintain in-house titles including lightweight games."
+      ],
+      "tech": [
+        "Unity (C#)",
+        "Node.js",
+        "PHP",
+        "JavaScript",
+        "MySQL",
+        "Redis"
+      ],
+      "notes": []
+    },
+    {
+      "company": "Morpho, Inc.",
+      "title": "Software Engineer",
+      "employment_type": "Full-time",
+      "domain": "Imaging R&D/SDK/Mobile",
+      "location": "",
+      "start_date": "2011-04",
+      "end_date": "2013-02",
+      "summary": "Implement/optimize imaging algorithms (SIMD), SDK-ize, Android camera PoCs.",
+      "responsibilities": [
+        "Implement night-portrait compositing; productize as SDK (deployed on Kyocera URBANO L03).",
+        "SIMD optimization of JPEG codec (decoder/encoder) on x86/SSE.",
+        "Experiment with annotation (SIFT/SURF/CCA) and JNI wrappers.",
+        "Prototype Android camera/imaging apps."
+      ],
+      "tech": [
+        "C",
+        "C++",
+        "SIMD (SSE)",
+        "Android (Java)",
+        "Image processing"
+      ],
+      "notes": []
+    },
+    {
+      "company": "CIS",
+      "title": "Software Engineer",
+      "employment_type": "Part-time",
+      "domain": "DSP optimization / imaging / embedded",
+      "location": "Tokyo",
+      "start_date": "2008-04",
+      "end_date": "2011-03",
+      "summary": "TI C64x DSP optimization, coprocessor analysis/assembler, JPEG codec offload.",
+      "responsibilities": [
+        "Optimize primitive imaging kernels on C64x DSP to **150–250%** of original C implementations (SIMD, pipeline, memory).",
+        "Analyze coprocessor and build a dedicated assembler to **fully offload JPEG encoding**.",
+        "Reduce system-wide encoding load by **~10%**."
+      ],
+      "tech": [
+        "C",
+        "C++",
+        "SIMD",
+        "DSP (TI C64x)",
+        "Assembler"
+      ],
+      "notes": []
+    }
+  ],
+  "education": [
+    {
+      "school": "The University of Electro-Communications, Graduate School",
+      "program": "Information and Communication Engineering",
+      "degree": "M.Eng.",
+      "start_date": "2009-04",
+      "end_date": "2011-03"
+    },
+    {
+      "school": "The University of Electro-Communications",
+      "program": "Information and Communication Engineering",
+      "degree": "B.Eng.",
+      "start_date": "2007-04",
+      "end_date": "2009-03"
+    },
+    {
+      "school": "National Institute of Technology, Hakodate College",
+      "program": "Information Engineering",
+      "degree": "Associate",
+      "start_date": "2002-04",
+      "end_date": "2007-03"
+    }
+  ],
+  "interests": [
+    {
+      "name": "DIY / Electronics",
+      "notes": "Prototyping with MCUs and sensors; verification via ROS integration."
+    },
+    {
+      "name": "Amateur Radio",
+      "notes": "Building transceivers from kits; operating FT8."
+    },
+    {
+      "name": "Programming",
+      "notes": "Publishing personal projects as OSS."
+    }
+  ]
+}

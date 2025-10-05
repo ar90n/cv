@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .page {
+      break-inside: avoid;
+    }
+    h2 {
+      break-after: avoid;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 9999px;
+      border: 1px solid #d1d5db;
+      padding: 0.125rem 0.5rem;
+      font-size: 0.75rem;
+      color: #374151;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <div id="content" class="max-w-4xl mx-auto p-6"></div>
+
+  <script>
+    window.MASTER_DATA = /* JSON here */;
+  </script>
+
+  <script>
+    const data = window.MASTER_DATA;
+
+    function detectLanguage(data) {
+      const str = JSON.stringify(data);
+      return /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(str) ? 'ja' : 'en';
+    }
+
+    function formatDate(isoDate, lang) {
+      // FIX: Normalize empty strings and whitespace to falsy behavior
+      if (!isoDate || (typeof isoDate === 'string' && isoDate.trim() === '')) {
+        return lang === 'ja' ? '現在' : 'Present';
+      }
+
+      // Validate date format
+      if (!/^\d{4}-\d{2}(-\d{2})?$/.test(isoDate)) return '';
+
+      // Parse date (add -01 only if day is missing)
+      const dateStr = isoDate.length === 7 ? isoDate + '-01' : isoDate;
+      const d = new Date(dateStr);
+
+      // Validate parsed date
+      if (isNaN(d.getTime())) return '';
+
+      // Format per language
+      if (lang === 'ja') {
+        return `${d.getFullYear()}年${d.getMonth() + 1}月`;
+      } else {
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+      }
+    }
+
+    const lang = detectLanguage(data);
+    document.documentElement.lang = lang;
+    document.title = `${data.basics.name} - ${data.basics.title}`;
+
+    const content = document.getElementById('content');
+
+    // Render Header
+    function renderHeader() {
+      const header = document.createElement('header');
+      header.className = 'mb-6';
+      header.innerHTML = `
+        <h1 class="text-3xl font-bold tracking-tight mb-2">${data.basics.name}</h1>
+        <p class="text-xl text-gray-700 mb-2">${data.basics.title}</p>
+        <div class="text-sm text-gray-600 space-y-1">
+          ${data.basics.email ? `<p>Email: <a href="mailto:${data.basics.email}" class="underline">${data.basics.email}</a></p>` : ''}
+          ${data.basics.phone ? `<p>Phone: ${data.basics.phone}</p>` : ''}
+          ${data.basics.location ? `<p>Location: ${data.basics.location}</p>` : ''}
+          ${data.basics.profiles ? Object.entries(data.basics.profiles).map(([key, url]) =>
+            `<p>${key.charAt(0).toUpperCase() + key.slice(1)}: <a href="${url}" class="underline">${url}</a></p>`
+          ).join('') : ''}
+        </div>
+      `;
+      content.appendChild(header);
+    }
+
+    // Render Summary
+    function renderSummary() {
+      if (!data.summary) return;
+
+      const section = document.createElement('section');
+      section.className = 'mb-6';
+      section.innerHTML = `
+        <h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '概要' : 'Summary'}</h2>
+        <p class="leading-relaxed">${data.summary}</p>
+      `;
+      content.appendChild(section);
+    }
+
+    // Render Skills
+    function renderSkills() {
+      if (!data.skills) return;
+
+      const hasSkills = Object.values(data.skills).some(arr => arr && arr.length > 0);
+      if (!hasSkills) return;
+
+      const section = document.createElement('section');
+      section.className = 'mb-6';
+
+      let skillsHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? 'スキル' : 'Skills'}</h2>`;
+      skillsHTML += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+
+      Object.entries(data.skills).forEach(([category, skills]) => {
+        if (skills && skills.length > 0) {
+          const categoryName = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+          skillsHTML += `
+            <div>
+              <h3 class="text-lg font-semibold mb-2">${categoryName}</h3>
+              <div class="flex flex-wrap gap-1">
+                ${skills.map(skill => `<span class="badge">${skill}</span>`).join('')}
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      skillsHTML += '</div>';
+      section.innerHTML = skillsHTML;
+      content.appendChild(section);
+    }
+
+    // Render Experience
+    function renderExperience() {
+      if (!data.experience || data.experience.length === 0) return;
+
+      const section = document.createElement('section');
+      section.className = 'mb-6';
+
+      let expHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '職務経歴' : 'Experience'}</h2>`;
+
+      data.experience.forEach(exp => {
+        const startDate = formatDate(exp.start_date, lang);
+        const endDate = formatDate(exp.end_date, lang);
+        const dateRange = lang === 'ja' ? `${startDate} 〜 ${endDate}` : `${startDate} – ${endDate}`;
+
+        expHTML += `
+          <div class="page mb-4">
+            <h3 class="text-lg font-semibold">${exp.company}</h3>
+            <p class="text-sm text-gray-600 mb-1">${exp.title} | ${dateRange}</p>
+            ${exp.location ? `<p class="text-sm text-gray-600 mb-2">${exp.location}</p>` : ''}
+            ${exp.summary ? `<p class="text-sm mb-2">${exp.summary}</p>` : ''}
+            ${exp.tech && exp.tech.length > 0 ? `
+              <div class="flex flex-wrap gap-1 mb-2">
+                ${exp.tech.map(t => `<span class="badge">${t}</span>`).join('')}
+              </div>
+            ` : ''}
+            ${exp.responsibilities && exp.responsibilities.length > 0 ? `
+              <ul class="list-disc list-inside space-y-1 text-sm">
+                ${exp.responsibilities.slice(0, 6).map(r => `<li>${r}</li>`).join('')}
+              </ul>
+            ` : ''}
+          </div>
+        `;
+      });
+
+      section.innerHTML = expHTML;
+      content.appendChild(section);
+    }
+
+    // Render Education
+    function renderEducation() {
+      if (!data.education || data.education.length === 0) return;
+
+      const section = document.createElement('section');
+      section.className = 'mb-6';
+
+      let eduHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '学歴' : 'Education'}</h2>`;
+
+      data.education.forEach(edu => {
+        const endDate = formatDate(edu.end_date, lang);
+
+        eduHTML += `
+          <div class="page mb-3">
+            <h3 class="text-lg font-semibold">${edu.institution || edu.school || '[Institution Unknown]'}</h3>
+            <p class="text-sm text-gray-700">${edu.degree || '[Degree Unknown]'}${(edu.field || edu.program) ? ` - ${edu.field || edu.program}` : ''}</p>
+            <p class="text-sm text-gray-600">${endDate}</p>
+            ${edu.gpa ? `<p class="text-sm text-gray-600">GPA: ${edu.gpa}</p>` : ''}
+          </div>
+        `;
+      });
+
+      section.innerHTML = eduHTML;
+      content.appendChild(section);
+    }
+
+    // Render Certifications
+    function renderCertifications() {
+      if (!data.certifications || data.certifications.length === 0) return;
+
+      const section = document.createElement('section');
+      section.className = 'mb-6';
+
+      let certHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '資格' : 'Certifications'}</h2>`;
+
+      data.certifications.forEach(cert => {
+        const date = formatDate(cert.date, lang);
+        certHTML += `
+          <div class="page mb-2">
+            <p class="font-semibold">${cert.name}</p>
+            <p class="text-sm text-gray-600">${cert.issuer}${date ? ` | ${date}` : ''}</p>
+            ${cert.url ? `<p class="text-sm"><a href="${cert.url}" class="underline">${cert.url}</a></p>` : ''}
+          </div>
+        `;
+      });
+
+      section.innerHTML = certHTML;
+      content.appendChild(section);
+    }
+
+    // Render Interests
+    function renderInterests() {
+      if (!data.interests || data.interests.length === 0) return;
+
+      const section = document.createElement('section');
+      section.className = 'mb-6';
+
+      let interestsHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '趣味・関心' : 'Interests'}</h2>`;
+      interestsHTML += '<div class="space-y-2">';
+
+      data.interests.forEach(interest => {
+        if (typeof interest === 'string') {
+          interestsHTML += `<div><p class="font-semibold">${interest}</p></div>`;
+        } else if (interest && interest.name) {
+          interestsHTML += `
+            <div>
+              <p class="font-semibold">${interest.name}</p>
+              ${interest.notes ? `<p class="text-sm text-gray-600">${interest.notes}</p>` : ''}
+            </div>
+          `;
+        }
+      });
+
+      interestsHTML += '</div>';
+      section.innerHTML = interestsHTML;
+      content.appendChild(section);
+    }
+
+    // Render all sections in order
+    renderHeader();
+    renderSummary();
+    renderSkills();
+    renderExperience();
+    renderEducation();
+    renderCertifications();
+    renderInterests();
+  </script>
+</body>
+</html>

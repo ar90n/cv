@@ -1,0 +1,296 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://lab.ar90n.net/resume-schema.json",
+  "title": "Resume Data Schema",
+  "description": "JSON Schema for resume data validation (Japanese and English versions)",
+  "type": "object",
+  "required": ["basics", "experience", "education"],
+  "properties": {
+    "basics": {
+      "type": "object",
+      "required": ["name", "name_en", "title", "email"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Full name (Japanese)"
+        },
+        "name_en": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Full name (English)"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Professional title/role"
+        },
+        "location": {
+          "type": "string",
+          "description": "Location (city, country)"
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number"
+        },
+        "profiles": {
+          "type": "object",
+          "description": "Social/professional profiles",
+          "properties": {
+            "linkedin": {
+              "type": "string"
+            },
+            "github": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            },
+            "twitter": {
+              "type": "string"
+            }
+          }
+        },
+        "objective": {
+          "type": "string",
+          "description": "Career objective"
+        },
+        "summary_pr": {
+          "type": "string",
+          "description": "Summary PR statement"
+        },
+        "language_proficiency": {
+          "type": "object",
+          "description": "Language proficiency levels"
+        }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "description": "Work experience history",
+      "items": {
+        "type": "object",
+        "required": ["company", "title", "start_date"],
+        "properties": {
+          "company": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Company name"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Job title/position"
+          },
+          "start_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+            "description": "Start date (YYYY-MM or YYYY-MM-DD)"
+          },
+          "end_date": {
+            "type": ["string", "null"],
+            "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+            "description": "End date (YYYY-MM or YYYY-MM-DD), null for current"
+          },
+          "location": {
+            "type": "string",
+            "description": "Work location"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Brief summary of role"
+          },
+          "responsibilities": {
+            "type": "array",
+            "description": "List of responsibilities",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tech": {
+            "type": "array",
+            "description": "Technologies used",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "description": "Additional notes",
+            "items": {
+              "type": "string"
+            }
+          },
+          "employment_type": {
+            "type": "string",
+            "description": "Employment type"
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain or industry"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "education": {
+      "type": "array",
+      "description": "Educational background",
+      "items": {
+        "type": "object",
+        "required": ["degree", "end_date"],
+        "properties": {
+          "institution": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Institution name"
+          },
+          "school": {
+            "type": "string",
+            "minLength": 1,
+            "description": "School name (alternative to institution)"
+          },
+          "degree": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Degree or certification"
+          },
+          "field": {
+            "type": "string",
+            "description": "Field of study"
+          },
+          "program": {
+            "type": "string",
+            "description": "Program name (alternative to field)"
+          },
+          "start_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+            "description": "Start date (YYYY-MM or YYYY-MM-DD)"
+          },
+          "end_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+            "description": "End date (YYYY-MM or YYYY-MM-DD)"
+          },
+          "gpa": {
+            "type": "string",
+            "description": "GPA or grade"
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "description": "Skills categorized by type (optional)",
+      "properties": {
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "frameworks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "robotics_embedded": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "image_processing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "web_backend": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_science": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "other": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "description": "Professional certifications (optional)",
+      "items": {
+        "type": "object",
+        "required": ["name", "issuer"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Certification name"
+          },
+          "issuer": {
+            "type": "string",
+            "description": "Issuing organization"
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+            "description": "Date obtained (YYYY-MM or YYYY-MM-DD)"
+          },
+          "url": {
+            "type": "string",
+            "description": "Certificate URL"
+          }
+        }
+      }
+    },
+    "interests": {
+      "type": "array",
+      "description": "Personal interests or hobbies (optional)",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "summary": {
+      "type": "string",
+      "description": "Professional summary paragraph"
+    }
+  }
+}

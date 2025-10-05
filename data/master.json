@@ -1,0 +1,352 @@
+{
+  "basics": {
+    "name": "和田 政弘",
+    "name_en": "Masahiro Wada",
+    "title": "Senior Software Engineer",
+    "location": "Japan",
+    "email": "argon.argon.argon@gmail.com",
+    "profiles": {
+      "github": "https://github.com/ar90n",
+      "website": "https://lab.ar90n.net",
+      "linkedin": "https://www.linkedin.com/in/ar90n/"
+    },
+    "objective": "ディープテック領域で困難な課題に挑戦。Python/Rust を軸に価値が出る技術を現場で活用したい。",
+    "summary_pr": "画像処理分野を中心に、組込み〜医療機器〜Web バックエンドまで一貫して対応可能。",
+    "language_proficiency": {
+      "ja": "native",
+      "en": "reading/writing"
+    }
+  },
+  "certifications": [
+    {
+      "name": "第一級陸上無線技術士",
+      "issuer": "",
+      "date": "2024-01"
+    },
+    {
+      "name": "Kaggle Competition Expert",
+      "issuer": "Kaggle",
+      "date": "2021-01"
+    },
+    {
+      "name": "エンベデッドシステムスペシャリスト",
+      "issuer": "IPA",
+      "date": "2010-11"
+    }
+  ],
+  "summary": "画像処理（医療・製造）、ロボティクス、Web バックエンドを横断するソフトウェアエンジニア。Python/Rust/Go/C/C++/C#/TypeScript を用い、アルゴリズム実装〜SDK 化〜クラウド運用まで一貫対応。ROS と Zephyr によるロボット開発、DICOM/PACS 連携、性能最適化（SIMD/並列化）、データ基盤・可視化（TS/Unity）まで実務経験。",
+  "skills": {
+    "languages": [
+      "Python",
+      "Rust",
+      "Go",
+      "C",
+      "C++",
+      "C#",
+      "TypeScript"
+    ],
+    "robotics_embedded": [
+      "ROS",
+      "Zephyr RTOS",
+      "CAN"
+    ],
+    "medical_manufacturing": [
+      "DICOM",
+      "PACS",
+      "CT/MR/内視鏡",
+      "2D/3D セグメンテーション",
+      "図面解析"
+    ],
+    "algorithms": [
+      "画像処理",
+      "信号処理",
+      "最適化（SIMD/並列化）",
+      "OpenVINO"
+    ],
+    "backend_infra": [
+      "Node.js",
+      "gRPC",
+      "AWS",
+      "Google Cloud",
+      "Docker",
+      "Linux",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "client_visualization": [
+      "React",
+      "Unity（C#）"
+    ]
+  },
+  "experience": [
+    {
+      "company": "株式会社LexxPluss",
+      "title": "Senior Software Engineer",
+      "employment_type": "正社員",
+      "domain": "移動ロボット（AMR/AGV）",
+      "location": "",
+      "start_date": "2024-01",
+      "end_date": null,
+      "summary": "ロボットのソフトウェア/ファームウェア開発、運用改善。",
+      "responsibilities": [
+        "Zephyr + UART/CAN で各種ペリフェラルを ROS 側に公開するファームウェアの保守・移植・機能拡張（IMU/エンコーダ/各種 I/O）",
+        "特定顧客向けロボットへのシステム移植・カスタマイズ（ホイールドライバ制御方式の変更対応）",
+        "移動制御・自己位置推定を除く各種アプリケーション ROS ノードの開発（監視・診断・I/O・デバイス管理・運用補助など）",
+        "ROS による移動ロボットシステム開発"
+      ],
+      "tech": [
+        "ROS",
+        "Zephyr RTOS",
+        "CAN",
+        "C",
+        "C++",
+        "Python",
+        "Rust",
+        "Docker",
+        "Linux"
+      ],
+      "notes": []
+    },
+    {
+      "company": "Hacobu Inc.",
+      "title": "Software Engineer",
+      "employment_type": "正社員",
+      "domain": "物流（倉庫バース管理/フリート管理/データ解析）",
+      "location": "",
+      "start_date": "2023-03",
+      "end_date": "2023-12",
+      "summary": "バース管理アプリのバックエンド、新 GPS デバイス評価、AI 利用の初期検討（PoC）。",
+      "responsibilities": [
+        "バース管理アプリのバックエンド実装（Go）",
+        "フリート管理で利用する新 GPS デバイスの評価（挙動確認・ログ取得・適合性検証・連携要件整理）",
+        "既存データパイプラインに取り込むためのエンドポイント設計・実装（Go）",
+        "データ解析/AI 利用の初期検討（PoC）：深度推定で荷室使用容積を推定、加速度センサで積載重量を推定"
+      ],
+      "tech": [
+        "Go",
+        "Python",
+        "ログ分析"
+      ],
+      "notes": []
+    },
+    {
+      "company": "フリーランス",
+      "title": "Software Engineer",
+      "employment_type": "業務委託",
+      "domain": "計測/IoT/VR・メタバース",
+      "location": "",
+      "start_date": "2022-01",
+      "end_date": "2023-02",
+      "summary": "深度カメラ計測、船舶向け IoT/データパイプライン、VR 体験改善を担当。",
+      "responsibilities": [
+        "複数深度カメラの外部パラメータキャリブレーションの実装",
+        "荷物の容積推定",
+        "船舶管理向け IoT システムの保守（Python）",
+        "GPS/船舶情報パイプラインの保守（Go）",
+        "AIS データ集積パイプラインの実装（Go）",
+        "キャラクターモデル最適化用データパイプラインの実装（Go、AWS Lambda/S3/SQS）→ ロード時間短縮",
+        "YouTube 配信連携のコメント配信改善（Go）",
+        "特定行動に対するメタデータ付与（Unity、C#）"
+      ],
+      "tech": [
+        "Python",
+        "Go",
+        "Unity（C#）",
+        "AWS",
+        "深度カメラ",
+        "キャリブレーション"
+      ],
+      "notes": []
+    },
+    {
+      "company": "キャディ株式会社",
+      "title": "Software Engineer",
+      "employment_type": "正社員",
+      "domain": "製造（図面管理/図面解析）",
+      "location": "",
+      "start_date": "2020-06",
+      "end_date": "2022-01",
+      "summary": "図面管理システムと図面解析アルゴリズムの開発、評価・運用基盤整備。",
+      "responsibilities": [
+        "配信用図面画像生成データパイプラインの実装（TypeScript）",
+        "バックエンド API の実装（TypeScript）",
+        "表題欄検出とメタデータ抽出の検討（Python、Rust）",
+        "図面管理システムとのインテグレーションの検討（Python）",
+        "アルゴリズム評価用バッチシステムの実装（Python、Google Cloud Composer/Airflow）"
+      ],
+      "tech": [
+        "TypeScript",
+        "Rust",
+        "Python",
+        "Google Cloud"
+      ],
+      "notes": []
+    },
+    {
+      "company": "株式会社エルピクセル",
+      "title": "Software Engineer",
+      "employment_type": "正社員",
+      "domain": "医療画像（内視鏡/顕微鏡/解析基盤）",
+      "location": "Tokyo",
+      "start_date": "2017-10",
+      "end_date": "2020-05",
+      "summary": "医療画像解析プラットフォーム/ライブラリ、リアルタイム解析 SDK、顕微鏡画像解析 Web アプリ。",
+      "responsibilities": [
+        "Python+SQL によるデータワークフローの設計・実装",
+        "医療画像解析アルゴリズムの改良とプラットフォーム統合",
+        "製品導入支援（現地・ベンダ連携）",
+        "内視鏡リアルタイム画像解析 SDK：モデルのリアルタイム推論最適化",
+        "Windows/Linux 対応の C/C#/Python 向け SDK 作成",
+        "内視鏡画像キャプチャシステムとのインテグレーション",
+        "顕微鏡画像解析 Web アプリの UI（React）実装と API/データパイプライン実装"
+      ],
+      "tech": [
+        "Python",
+        "C++",
+        "C#",
+        "TypeScript",
+        "OpenVINO",
+        "React",
+        "AWS",
+        "DICOM",
+        "SQL",
+        "Docker",
+        "Keras",
+        "TensorFlow",
+        "Flask",
+        "SQLite",
+        "NumPy"
+      ],
+      "notes": []
+    },
+    {
+      "company": "TeraRecon, Inc.",
+      "title": "Software Engineer",
+      "employment_type": "正社員",
+      "domain": "医療画像（CT/MR、3D ワークステーション）",
+      "location": "Tokyo",
+      "start_date": "2014-10",
+      "end_date": "2017-10",
+      "summary": "臓器/血管セグメンテーション、3D ワークステーション機能。",
+      "responsibilities": [
+        "臓器・血管などのセグメンテーション実装（C++）",
+        "3D ワークステーションアプリの開発（C#、Windows Forms）"
+      ],
+      "tech": [
+        "C++",
+        "C#",
+        "医療画像処理"
+      ],
+      "notes": []
+    },
+    {
+      "company": "株式会社コロプラ",
+      "title": "Software Engineer",
+      "employment_type": "正社員",
+      "domain": "スマートフォンゲーム/リアルタイム通信",
+      "location": "",
+      "start_date": "2013-02",
+      "end_date": "2014-10",
+      "summary": "Unity クライアントと Node.js リレーでリアルタイム同期と運用を担当。",
+      "responsibilities": [
+        "マルチプレイのゲームオブジェクト同期・ロジックの実装（Unity、C#）",
+        "WebSocket ベースのリレーサーバの設計・実装（Node.js）",
+        "韓国向けクイズゲームの運用・改修",
+        "自社タイトルの新規/運用開発（軽量タイトル含む）"
+      ],
+      "tech": [
+        "Unity（C#）",
+        "Node.js",
+        "PHP",
+        "JavaScript",
+        "MySQL",
+        "Redis"
+      ],
+      "notes": []
+    },
+    {
+      "company": "株式会社モルフォ",
+      "title": "Software Engineer",
+      "employment_type": "正社員",
+      "domain": "画像処理 R&D/SDK/モバイル",
+      "location": "",
+      "start_date": "2011-04",
+      "end_date": "2013-02",
+      "summary": "画像処理アルゴリズム実装・最適化（SIMD）、SDK 化、Android カメラ系 PoC。",
+      "responsibilities": [
+        "夜景ポートレート合成エンジンの実装→SDK 化（採用端末: 京セラ URBANO L03）",
+        "JPEG コーデック（デコーダ/エンコーダ）の SIMD 最適化（x86/SSE 系）",
+        "画像アノテーションエンジン（SIFT/SURF/CCA）の実験と JNI ラッパの試作",
+        "Android 向けカメラ/画像アプリの PoC 開発"
+      ],
+      "tech": [
+        "C",
+        "C++",
+        "SIMD",
+        "Android",
+        "画像処理"
+      ],
+      "notes": []
+    },
+    {
+      "company": "株式会社シーアイエス",
+      "title": "Software Engineer",
+      "employment_type": "パート・アルバイト",
+      "domain": "DSP 最適化/画像処理/組込み",
+      "location": "Tokyo",
+      "start_date": "2008-04",
+      "end_date": "2011-03",
+      "summary": "TI C64x DSP 最適化、コプロセッサ解析と専用アセンブラ、JPEG コーデック実装。",
+      "responsibilities": [
+        "C64x DSP 最適化：プリミティブな画像処理で元の C 実装比 150〜250% の高速化",
+        "コプロセッサ命令解析と専用アセンブラにより JPEG エンコードを完全オフロード",
+        "システム全体に占めるエンコード処理（約 10%）を削減"
+      ],
+      "tech": [
+        "C",
+        "C++",
+        "SIMD",
+        "DSP（TI C64x）",
+        "アセンブラ"
+      ],
+      "notes": []
+    }
+  ],
+  "education": [
+    {
+      "school": "電気通信大学大学院",
+      "program": "電気通信学研究科 情報通信工学専攻",
+      "degree": "修士",
+      "start_date": "2009-04",
+      "end_date": "2011-03"
+    },
+    {
+      "school": "電気通信大学",
+      "program": "情報通信工学科",
+      "degree": "学士",
+      "start_date": "2007-04",
+      "end_date": "2009-03"
+    },
+    {
+      "school": "函館工業高等専門学校",
+      "program": "情報工学科",
+      "degree": "準学士",
+      "start_date": "2002-04",
+      "end_date": "2007-03"
+    }
+  ],
+  "interests": [
+    {
+      "name": "DIY / 電子工作",
+      "notes": "マイコンと各種センサの試作。ROS 連携による動作検証。"
+    },
+    {
+      "name": "アマチュア無線",
+      "notes": "組立キットによる無線機製作。FT8 での運用。"
+    },
+    {
+      "name": "プログラミング",
+      "notes": "個人開発のコードを OSS として公開。"
+    }
+  ]
+}
