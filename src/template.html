@@ -67,16 +67,28 @@
       }
 
       // Validate date format
-      if (!/^\d{4}-\d{2}(-\d{2})?$/.test(isoDate)) return '';
+      if (!/^\d{4}(-\d{2}(-\d{2})?)?$/.test(isoDate)) return '';
 
       // Parse date (add -01 only if day is missing)
-      const dateStr = isoDate.length === 7 ? isoDate + '-01' : isoDate;
+      let dateStr;
+      if (isoDate.length === 4) {
+        dateStr = isoDate + '-01-01';
+      } else if (isoDate.length === 7) {
+        dateStr = isoDate + '-01';
+      } else {
+        dateStr = isoDate;
+      }
       const d = new Date(dateStr);
 
       // Validate parsed date
       if (isNaN(d.getTime())) return '';
 
       // Format per language
+      if (isoDate.length === 4) {
+        // Year-only format
+        return lang === 'ja' ? d.getFullYear() + '年' : d.getFullYear().toString();
+      }
+
       if (lang === 'ja') {
         return `${d.getFullYear()}年${d.getMonth() + 1}月`;
       } else {
