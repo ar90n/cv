@@ -16,21 +16,21 @@
   "certifications": [
     {
       "name": "First-Class Radio Operator for Land Mobile Service",
-      "issuer": "",
-      "date": "2024-01"
+      "issuer": "Ministry of Internal Affairs and Communications",
+      "date": "2024"
     },
     {
       "name": "Kaggle Competition Expert",
       "issuer": "Kaggle",
-      "date": "2021-01"
+      "date": "2021"
     },
     {
       "name": "Embedded Systems Specialist (Japan IPA)",
       "issuer": "IPA",
-      "date": "2010-11"
+      "date": "2010"
     }
   ],
-  "summary": "Senior software engineer across medical/manufacturing image processing, robotics (ROS/Zephyr), and web/cloud backends. Delivers from algorithm and SDKs to cloud operations with Python, Rust, Go, C/C++, C#, and TypeScript. Hands-on with DICOM/PACS, SIMD/parallel optimization, and data pipelines/visualization.",
+  "summary": "Software engineer spanning image processing (medical/manufacturing), robotics, and web backends. Using Python/Rust/Go/C/C++/C#/TypeScript, delivers end-to-end from algorithm implementation to SDK productization to cloud operations. Hands-on experience with robot development via ROS and Zephyr, DICOM/PACS integration, optimization (SIMD/parallelization), and data infrastructure/visualization (TS/Unity).",
   "skills": {
     "languages": [
       "Python",
@@ -44,15 +44,16 @@
     "robotics_embedded": [
       "ROS",
       "Zephyr RTOS",
-      "UART",
       "CAN"
     ],
-    "medical_manufacturing": [
+    "medical": [
       "DICOM",
       "PACS",
-      "CT/MR/Endoscope",
-      "2D/3D Segmentation",
-      "Drawing Analysis"
+      "CT/MR/X-ray/Endoscope",
+      "2D/3D Segmentation"
+    ],
+    "manufacturing": [
+      "Drawing Image Analysis"
     ],
     "algorithms": [
       "Image/Signal Processing",
@@ -93,12 +94,9 @@
       "tech": [
         "ROS",
         "Zephyr RTOS",
-        "UART",
         "CAN",
-        "C",
         "C++",
         "Python",
-        "Rust",
         "Docker",
         "Linux"
       ],
@@ -121,8 +119,7 @@
       ],
       "tech": [
         "Go",
-        "Python",
-        "Log analysis"
+        "Python"
       ],
       "notes": []
     },
@@ -136,21 +133,20 @@
       "end_date": "2023-02",
       "summary": "Depth-camera measurement, marine IoT/pipelines, and user-experience improvements for VR.",
       "responsibilities": [
-        "Implement multi-depth-camera extrinsic calibration.",
-        "Estimate package volume from depth data.",
+        "Implement multi-depth-camera extrinsic calibration (Python).",
+        "Estimate package volume from depth data (Python).",
         "Maintain IoT system for ship management (Python).",
         "Maintain GPS/ship-info data pipelines (Go).",
         "Implement AIS data ingestion pipeline (Go).",
-        "Implement character model optimization pipeline (Go, AWS Lambda/S3/SQS) to reduce load time.",
+        "Implement character model optimization pipeline (Go, AWS Lambda/S3/SQS).",
         "Improve YouTube live integration (Go) and attach metadata to specific in-app user actions (Unity, C#)."
       ],
       "tech": [
         "Python",
         "Go",
         "Unity (C#)",
-        "AWS (Lambda, S3, SQS)",
-        "Depth Cameras",
-        "Calibration"
+        "AWS",
+        "Depth Cameras"
       ],
       "notes": []
     },
@@ -174,7 +170,7 @@
         "TypeScript",
         "Rust",
         "Python",
-        "Google Cloud (Composer/Airflow, Storage, Functions)"
+        "Google Cloud"
       ],
       "notes": []
     },
