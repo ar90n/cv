@@ -20,21 +20,21 @@
   "certifications": [
     {
       "name": "第一級陸上無線技術士",
-      "issuer": "",
-      "date": "2024-01"
+      "issuer": "総務省",
+      "date": "2024"
     },
     {
       "name": "Kaggle Competition Expert",
       "issuer": "Kaggle",
-      "date": "2021-01"
+      "date": "2021"
     },
     {
       "name": "エンベデッドシステムスペシャリスト",
       "issuer": "IPA",
-      "date": "2010-11"
+      "date": "2010"
     }
   ],
-  "summary": "画像処理（医療・製造）、ロボティクス、Web バックエンドを横断するソフトウェアエンジニア。Python/Rust/Go/C/C++/C#/TypeScript を用い、アルゴリズム実装〜SDK 化〜クラウド運用まで一貫対応。ROS と Zephyr によるロボット開発、DICOM/PACS 連携、性能最適化（SIMD/並列化）、データ基盤・可視化（TS/Unity）まで実務経験。",
+  "summary": "画像処理（医療・製造）、ロボティクス、Web バックエンドを横断するソフトウェアエンジニア。Python/Rust/Go/C/C++/C#/TypeScript を用い、アルゴリズム実装〜SDK化〜クラウド運用まで一貫対応。ROSとZephyrによるロボット開発、DICOM/PACS連携、最適化（SIMD/並列化）、データ基盤・可視化（TS/Unity）について実務経験あり。",
   "skills": {
     "languages": [
       "Python",
@@ -50,12 +50,14 @@
       "Zephyr RTOS",
       "CAN"
     ],
-    "medical_manufacturing": [
+    "medical": [
       "DICOM",
       "PACS",
-      "CT/MR/内視鏡",
-      "2D/3D セグメンテーション",
-      "図面解析"
+      "CT/MR/X線/内視鏡",
+      "2D/3D セグメンテーション"
+    ],
+    "manufacturing": [
+      "図面画像解析"
     ],
     "algorithms": [
       "画像処理",
@@ -64,14 +66,10 @@
       "OpenVINO"
     ],
     "backend_infra": [
-      "Node.js",
-      "gRPC",
       "AWS",
       "Google Cloud",
       "Docker",
-      "Linux",
-      "PostgreSQL",
-      "Redis"
+      "Linux"
     ],
     "client_visualization": [
       "React",
@@ -98,10 +96,8 @@
         "ROS",
         "Zephyr RTOS",
         "CAN",
-        "C",
         "C++",
         "Python",
-        "Rust",
         "Docker",
         "Linux"
       ],
@@ -124,8 +120,7 @@
       ],
       "tech": [
         "Go",
-        "Python",
-        "ログ分析"
+        "Python"
       ],
       "notes": []
     },
@@ -139,12 +134,12 @@
       "end_date": "2023-02",
       "summary": "深度カメラ計測、船舶向け IoT/データパイプライン、VR 体験改善を担当。",
       "responsibilities": [
-        "複数深度カメラの外部パラメータキャリブレーションの実装",
-        "荷物の容積推定",
+        "複数深度カメラの外部パラメータ推定処理の実装（Python）",
+        "深度画像を用いた荷物の容積推定（Python）",
         "船舶管理向け IoT システムの保守（Python）",
         "GPS/船舶情報パイプラインの保守（Go）",
         "AIS データ集積パイプラインの実装（Go）",
-        "キャラクターモデル最適化用データパイプラインの実装（Go、AWS Lambda/S3/SQS）→ ロード時間短縮",
+        "キャラクターモデル最適化用データパイプラインの実装（Go、AWS Lambda/S3/SQS）",
         "YouTube 配信連携のコメント配信改善（Go）",
         "特定行動に対するメタデータ付与（Unity、C#）"
       ],
@@ -153,8 +148,7 @@
         "Go",
         "Unity（C#）",
         "AWS",
-        "深度カメラ",
-        "キャリブレーション"
+        "深度カメラ"
       ],
       "notes": []
     },
@@ -187,7 +181,6 @@
       "title": "Software Engineer",
       "employment_type": "正社員",
       "domain": "医療画像（内視鏡/顕微鏡/解析基盤）",
-      "location": "Tokyo",
       "start_date": "2017-10",
       "end_date": "2020-05",
       "summary": "医療画像解析プラットフォーム/ライブラリ、リアルタイム解析 SDK、顕微鏡画像解析 Web アプリ。",
@@ -224,7 +217,6 @@
       "title": "Software Engineer",
       "employment_type": "正社員",
       "domain": "医療画像（CT/MR、3D ワークステーション）",
-      "location": "Tokyo",
       "start_date": "2014-10",
       "end_date": "2017-10",
       "summary": "臓器/血管セグメンテーション、3D ワークステーション機能。",
@@ -293,7 +285,6 @@
       "title": "Software Engineer",
       "employment_type": "パート・アルバイト",
       "domain": "DSP 最適化/画像処理/組込み",
-      "location": "Tokyo",
       "start_date": "2008-04",
       "end_date": "2011-03",
       "summary": "TI C64x DSP 最適化、コプロセッサ解析と専用アセンブラ、JPEG コーデック実装。",

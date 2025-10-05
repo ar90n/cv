@@ -1,0 +1,22 @@
+{
+  "name": "cv",
+  "version": "1.0.0",
+  "description": "Resume generation pipeline - JSON to HTML/PDF",
+  "private": true,
+  "scripts": {
+    "validate:ja": "ajv validate -s schema.json -d data/master.json --spec=draft7",
+    "validate:en": "ajv validate -s schema.json -d data/master_en.json --spec=draft7",
+    "build": "node src/build.js --data=data/master.json --out=dist/index.html --title='履歴書' && node src/build.js --data=data/master_en.json --out=dist/index_en.html --title='Resume'",
+    "pdf": "node src/pdf.js --in=dist/index.html --out=dist/resume_ja.pdf && node src/pdf.js --in=dist/index_en.html --out=dist/resume_en.pdf",
+    "serve": "http-server dist -p 8080",
+    "inspect": "node scripts/inspect.js"
+  },
+  "dependencies": {
+    "ajv-cli": "^5.0.0",
+    "http-server": "^14.0.0",
+    "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
