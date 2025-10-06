@@ -11,7 +11,11 @@
       "linkedin": "https://www.linkedin.com/in/ar90n/"
     },
     "objective": "Tackle hard problems in deep-tech domains; prefer applying Python/Rust where they deliver impact.",
-    "summary_pr": "End-to-end across embedded, medical systems, and web backends."
+    "summary_pr": "End-to-end across embedded, medical systems, and web backends.",
+    "language_proficiency": {
+      "ja": "native",
+      "en": "reading/writing"
+    }
   },
   "certifications": [
     {
@@ -58,17 +62,14 @@
     "algorithms": [
       "Image/Signal Processing",
       "Optimization (SIMD/Parallel)",
+      "OpenVINO",
       "OpenVINO"
     ],
     "backend_infra": [
       "Node.js",
       "gRPC",
       "AWS",
-      "Google Cloud",
-      "Docker",
-      "Linux",
-      "PostgreSQL",
-      "Redis"
+      "Google Cloud"
     ],
     "client_visualization": [
       "React",
@@ -179,7 +180,6 @@
       "title": "Software Engineer",
       "employment_type": "Full-time",
       "domain": "Medical imaging (endoscope/microscope/platform)",
-      "location": "Tokyo",
       "start_date": "2017-10",
       "end_date": "2020-05",
       "summary": "Imaging analysis platform/library, real-time endoscope SDK, and web app for microscopy.",
@@ -216,7 +216,6 @@
       "title": "Software Engineer",
       "employment_type": "Full-time",
       "domain": "Medical imaging (CT/MR, 3D workstation)",
-      "location": "Tokyo",
       "start_date": "2014-10",
       "end_date": "2017-10",
       "summary": "Segmentation algorithms and 3D workstation features.",
@@ -285,7 +284,6 @@
       "title": "Software Engineer",
       "employment_type": "Part-time",
       "domain": "DSP optimization / imaging / embedded",
-      "location": "Tokyo",
       "start_date": "2008-04",
       "end_date": "2011-03",
       "summary": "TI C64x DSP optimization, coprocessor analysis/assembler, JPEG codec offload.",

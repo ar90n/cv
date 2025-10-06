@@ -78,15 +78,15 @@ async function main() {
 
     console.log('Generating PDF...');
 
-    // Generate PDF with A4 format and 14mm margins
+    // Generate PDF with A4 format and 10mm margins
     await page.pdf({
       path: args.out,
       format: 'A4',
       margin: {
-        top: '14mm',
-        right: '14mm',
-        bottom: '14mm',
-        left: '14mm'
+        top: '10mm',
+        right: '10mm',
+        bottom: '10mm',
+        left: '10mm'
       },
       printBackground: true,
       preferCSSPageSize: false,

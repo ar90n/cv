@@ -9,7 +9,9 @@
     "build": "node src/build.js --data=data/master.json --out=dist/index.html --title='履歴書' && node src/build.js --data=data/master_en.json --out=dist/index_en.html --title='Resume'",
     "pdf": "node src/pdf.js --in=dist/index.html --out=dist/resume_ja.pdf && node src/pdf.js --in=dist/index_en.html --out=dist/resume_en.pdf",
     "serve": "http-server dist -p 8080",
-    "inspect": "node scripts/inspect.js"
+    "inspect": "node scripts/inspect.js",
+    "sync": "node src/sync-json.js",
+    "sync:check": "node src/sync-json.js --dry-run"
   },
   "dependencies": {
     "ajv-cli": "^5.0.0",

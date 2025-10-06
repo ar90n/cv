@@ -20,6 +20,8 @@
         "Meiryo",
         "MS PGothic",
         sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
     }
     .page {
       break-inside: avoid;
@@ -122,7 +124,7 @@
       const header = document.createElement('header');
       header.className = 'mb-6';
       header.innerHTML = `
-        <h1 class="text-3xl font-bold tracking-tight mb-2">${data.basics.name}</h1>
+        <h1 class="text-2xl font-bold tracking-tight mb-2">${data.basics.name}</h1>
         <p class="text-xl text-gray-700 mb-2">${data.basics.title}</p>
         <div class="text-sm text-gray-600 space-y-1">
           ${data.basics.email ? `<p>Email: <a href="mailto:${data.basics.email}" class="underline">${data.basics.email}</a></p>` : ''}
@@ -143,7 +145,7 @@
       const section = document.createElement('section');
       section.className = 'mb-6';
       section.innerHTML = `
-        <h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '概要' : 'Summary'}</h2>
+        <h2 class="text-lg font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '概要' : 'Summary'}</h2>
         <p class="leading-relaxed">${data.summary}</p>
       `;
       content.appendChild(section);
@@ -159,7 +161,7 @@
       const section = document.createElement('section');
       section.className = 'mb-6';
 
-      let skillsHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? 'スキル' : 'Skills'}</h2>`;
+      let skillsHTML = `<h2 class="text-lg font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? 'スキル' : 'Skills'}</h2>`;
       skillsHTML += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
 
       Object.entries(data.skills).forEach(([category, skills]) => {
@@ -167,7 +169,7 @@
           const categoryName = category.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
           skillsHTML += `
             <div>
-              <h3 class="text-lg font-semibold mb-2">${categoryName}</h3>
+              <h3 class="text-base font-semibold mb-2">${categoryName}</h3>
               <div class="flex flex-wrap gap-1">
                 ${skills.map(skill => `<span class="badge">${skill}</span>`).join('')}
               </div>
@@ -188,7 +190,7 @@
       const section = document.createElement('section');
       section.className = 'mb-6';
 
-      let expHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '職務経歴' : 'Experience'}</h2>`;
+      let expHTML = `<h2 class="text-lg font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '職務経歴' : 'Experience'}</h2>`;
 
       data.experience.forEach(exp => {
         const startDate = formatDate(exp.start_date, lang);
@@ -197,7 +199,7 @@
 
         expHTML += `
           <div class="page experience-entry">
-            <h3 class="text-lg font-semibold">${exp.company}</h3>
+            <h3 class="text-base font-semibold">${exp.company}</h3>
             <p class="text-sm text-gray-600 mb-1">${exp.title} | ${dateRange}</p>
             ${exp.summary ? `<p class="text-sm mb-2">${exp.summary}</p>` : ''}
             ${exp.tech && exp.tech.length > 0 ? `
@@ -225,14 +227,14 @@
       const section = document.createElement('section');
       section.className = 'mb-6';
 
-      let eduHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '学歴' : 'Education'}</h2>`;
+      let eduHTML = `<h2 class="text-lg font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '学歴' : 'Education'}</h2>`;
 
       data.education.forEach(edu => {
         const endDate = formatDate(edu.end_date, lang);
 
         eduHTML += `
           <div class="page mb-3">
-            <h3 class="text-lg font-semibold">${edu.institution || edu.school || '[Institution Unknown]'}</h3>
+            <h3 class="text-base font-semibold">${edu.institution || edu.school || '[Institution Unknown]'}</h3>
             <p class="text-sm text-gray-700">${edu.degree || '[Degree Unknown]'}${(edu.field || edu.program) ? ` - ${edu.field || edu.program}` : ''}</p>
             <p class="text-sm text-gray-600">${endDate}</p>
             ${edu.gpa ? `<p class="text-sm text-gray-600">GPA: ${edu.gpa}</p>` : ''}
@@ -251,7 +253,7 @@
       const section = document.createElement('section');
       section.className = 'mb-6';
 
-      let certHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '資格' : 'Certifications'}</h2>`;
+      let certHTML = `<h2 class="text-lg font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '資格' : 'Certifications'}</h2>`;
 
       data.certifications.forEach(cert => {
         const date = formatDate(cert.date, lang);
@@ -275,7 +277,7 @@
       const section = document.createElement('section');
       section.className = 'mb-6';
 
-      let interestsHTML = `<h2 class="text-xl font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '趣味・関心' : 'Interests'}</h2>`;
+      let interestsHTML = `<h2 class="text-lg font-semibold border-b border-gray-200 pb-1 mb-3">${lang === 'ja' ? '趣味・関心' : 'Interests'}</h2>`;
       interestsHTML += '<div class="space-y-2">';
 
       data.interests.forEach(interest => {
