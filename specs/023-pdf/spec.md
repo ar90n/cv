@@ -60,26 +60,26 @@ When creating this spec from a user prompt:
 As a website visitor, I want to easily find and download the PDF version of the resume through a more prominent and visually distinct element than the current text link.
 
 ### Acceptance Scenarios
-1. **Given** a user is viewing the web resume, **When** they look for the PDF download option, **Then** they should find it in [NEEDS CLARIFICATION: Where should the PDF button be positioned? Top-right corner? After header? Floating button?]
-2. **Given** a user sees the PDF download element, **When** they interact with it, **Then** it should be visually distinct as [NEEDS CLARIFICATION: Button style? Icon included? Color scheme?]
+1. **Given** a user is viewing the web resume, **When** they look for the PDF download option, **Then** they should find it at the bottom of the page
+2. **Given** a user sees the PDF download element, **When** they interact with it, **Then** it should appear as a button with colored background and border
 3. **Given** a user clicks the PDF download element, **When** the download initiates, **Then** the correct PDF file (resume_ja.pdf or resume_en.pdf based on language) should download
 
 ### Edge Cases
 - What happens when PDF file is not yet generated? [NEEDS CLARIFICATION: Show disabled state or hide element?]
-- How does the button/link behave on mobile devices? [NEEDS CLARIFICATION: Fixed position? Different styling?]
+- How does the button/link behave on mobile devices? (Centered, same size as desktop)
 - Should the element remain hidden in PDF output (current behavior)?
 
 ## Requirements *(mandatory)*
 
 ### Functional Requirements
-- **FR-001**: System MUST display a PDF download element in [NEEDS CLARIFICATION: specific position - header top-right? below contact info? floating corner?]
-- **FR-002**: The PDF download element MUST have [NEEDS CLARIFICATION: visual design - button with background? icon + text? specific colors?]
+- **FR-001**: System MUST display a PDF download element at the bottom of the page (after all content sections)
+- **FR-002**: The PDF download element MUST be styled as a button with gray background and border (matching site theme)
 - **FR-003**: Users MUST be able to download the PDF with a single click/tap
 - **FR-004**: The element MUST download the language-appropriate PDF (resume_ja.pdf for Japanese, resume_en.pdf for English)
 - **FR-005**: The element MUST remain hidden when viewing/generating PDF output (maintain current behavior)
-- **FR-006**: The element MUST be [NEEDS CLARIFICATION: responsive behavior - how should it adapt on mobile/tablet?]
+- **FR-006**: The element MUST remain centered and maintain the same size on mobile devices
 - **FR-007**: The element MUST have appropriate hover/focus states for accessibility
-- **FR-008**: The element MUST [NEEDS CLARIFICATION: include download icon? PDF icon? custom icon?]
+- **FR-008**: The element MUST include a PDF icon alongside the text label
 
 ---
 
@@ -93,9 +93,9 @@ As a website visitor, I want to easily find and download the PDF version of the 
 - [x] All mandatory sections completed
 
 ### Requirement Completeness
-- [ ] No [NEEDS CLARIFICATION] markers remain (8 clarifications needed)
-- [ ] Requirements are testable and unambiguous (position and design unclear)
-- [ ] Success criteria are measurable (visual design not specified)
+- [ ] No [NEEDS CLARIFICATION] markers remain (1 edge case remains)
+- [x] Requirements are testable and unambiguous (main requirements clarified)
+- [x] Success criteria are measurable (visual design specified)
 - [x] Scope is clearly bounded (PDF download element only)
 - [x] Dependencies and assumptions identified (maintains current PDF hiding behavior)
 
@@ -114,36 +114,27 @@ As a website visitor, I want to easily find and download the PDF version of the 
 
 ---
 
-## Clarifications Needed
+## Clarifications
 
-To complete this specification, please provide details on:
+### Session 2025-10-06
+- Q: Where should the PDF download element be positioned on the page? → A: Bottom of page (like https://paulpenney.ca/resume.html)
+- Q: What visual style should the PDF download element have? → A: Button with colored background and border
+- Q: Should the button include an icon? → A: PDF icon + text
+- Q: What color scheme should the button use? → A: Gray (matching site theme)
+- Q: How should the button adapt on mobile devices? → A: Centered button (same size)
 
-1. **Position**: Where should the PDF download element be placed?
-   - Top-right corner of the page?
-   - Below the contact information in header?
-   - As a floating button (bottom-right corner)?
-   - Other specific location?
+## Outstanding Clarifications
 
-2. **Visual Design**: What style should the element have?
-   - Button with background color and border?
-   - Icon + text combination?
-   - Just an icon?
-   - Specific color scheme (matching site theme or distinct)?
+The following details still need clarification:
 
-3. **Icon Usage**: Should an icon be included?
-   - Download icon?
-   - PDF file icon?
-   - No icon (text only)?
-   - Custom icon?
+1. **Edge Case Handling**: What happens when PDF file is not yet generated?
+   - Show disabled/grayed-out state?
+   - Hide the button entirely?
+   - Show with error message on click?
 
-4. **Mobile Behavior**: How should it adapt on smaller screens?
-   - Same position as desktop?
-   - Different position/size on mobile?
-   - Fixed/sticky positioning?
-
-5. **Interaction States**: Any specific requirements for:
-   - Hover effects?
-   - Click feedback?
-   - Loading states?
+2. **Interaction States**: Specific requirements for:
+   - Hover effects (color change, shadow, scale?)
+   - Click feedback (pressed state appearance?)
+   - Focus state for keyboard navigation?
 
 ---
