@@ -1,0 +1,56 @@
+name: Build Artifacts
+
+permissions:
+  contents: read
+  actions: read
+
+on:
+  push:
+    branches: ['**']
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - 'LICENSE'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate data
+        run: npm run validate:ja && npm run validate:en
+
+      - name: Build HTML
+        run: npm run build
+
+      - name: Generate PDFs
+        run: npm run pdf
+
+      - name: Upload HTML artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-html-${{ github.ref_name }}
+          path: |
+            dist/*.html
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Upload PDF artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdf-${{ github.ref_name }}
+          path: |
+            dist/*.pdf
+          retention-days: 30
+          if-no-files-found: error
