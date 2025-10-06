@@ -8,3 +8,8 @@ core
 core.*
 *.core
 vgcore.*
+
+# Development directories
+.claude/
+.specify/
+specs/
