@@ -1,5 +1,7 @@
 # Resume Pipeline
 
+![Build Artifacts](https://github.com/USER/REPO/actions/workflows/build-artifacts.yml/badge.svg)
+
 Automated resume generation and deployment system that produces multi-language (Japanese/English) resumes in HTML and PDF formats from JSON data.
 
 ## Features
@@ -8,6 +10,7 @@ Automated resume generation and deployment system that produces multi-language (
 - **Multi-Format Output**: HTML (web), PDF (print-ready A4), and markdown (paste-ready for external services)
 - **Schema Validation**: JSON Schema validation ensures data integrity
 - **Automated Deployment**: GitHub Actions automatically deploys to GitHub Pages on main branch pushes
+- **Build Artifacts**: Every push generates downloadable HTML and PDF artifacts via GitHub Actions
 
 ## Quick Start
 
@@ -27,6 +30,32 @@ npm run pdf
 
 # Local preview
 npm run serve   # http://localhost:8080
+```
+
+## Build Artifacts
+
+Every push to any branch automatically generates build artifacts that can be downloaded from GitHub Actions:
+
+1. Navigate to the **Actions** tab in the repository
+2. Click on the workflow run for your commit
+3. Scroll to **Artifacts** section
+4. Download:
+   - `resume-html-<branch>`: Contains `index.html` and `index_en.html`
+   - `resume-pdf-<branch>`: Contains `resume_ja.pdf` and `resume_en.pdf`
+
+Artifacts are retained for 30 days and include the branch name for easy identification.
+
+### Downloading via GitHub CLI
+
+```bash
+# List recent workflow runs
+gh run list --workflow=build-artifacts.yml
+
+# Download artifacts from latest run
+gh run download
+
+# Download specific artifacts
+gh run download --name resume-pdf-main
 ```
 
 ## Deployment
