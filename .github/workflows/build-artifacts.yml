@@ -6,7 +6,7 @@ permissions:
 
 on:
   push:
-    branches: ['**']
+    branches: [main]
     paths-ignore:
       - '**.md'
       - '.gitignore'
