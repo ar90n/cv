@@ -1,6 +1,6 @@
 # Resume Pipeline
 
-![Build Artifacts](https://github.com/USER/REPO/actions/workflows/build-artifacts.yml/badge.svg)
+![Build Artifacts](https://github.com/ar90n/cv/actions/workflows/build-artifacts.yml/badge.svg)
 
 Automated resume generation and deployment system that produces multi-language (Japanese/English) resumes in HTML and PDF formats from JSON data.
 
@@ -62,11 +62,11 @@ gh run download --name resume-pdf-main
 
 This resume is automatically deployed to GitHub Pages when changes are pushed to the main branch.
 
-**Live Site**: `https://<username>.github.io/<repo-name>/`
+**Live Site**: https://cv.ar90n.net/
 
 ### Workflow Status
 
-![Deployment Status](https://github.com/<username>/<repo-name>/actions/workflows/deploy-pages.yml/badge.svg)
+![Deployment Status](https://github.com/ar90n/cv/actions/workflows/deploy-pages.yml/badge.svg)
 
 ### One-Time Setup
 

@@ -37,6 +37,9 @@ jobs:
       - name: Generate PDF resumes
         run: npm run pdf
 
+      - name: Copy CNAME to dist
+        run: cp CNAME dist/ 2>/dev/null || true
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
